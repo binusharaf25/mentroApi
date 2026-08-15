@@ -1,8 +1,8 @@
-[] git hub
-[✅] mongodb atlas
-[] Render deployment 
-[✅] Enviroment variables
-[✅] gitignore
+-[✅] git hub
+-[✅] mongodb atlas
+-[] Render deployment 
+-[✅] Enviroment variables
+-[✅] gitignore
 
 
 git init
