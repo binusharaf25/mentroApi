@@ -14,6 +14,15 @@ import helmet from 'helmet';
 import { limiter } from './middleweres/rateLimiter.js';
 
 
+//swagger
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './utils/swagger.js';
+
+
+
+
+
+
 dotenv.config();
 
 const app=express()
@@ -24,8 +33,14 @@ const Port=process.env.PORT || 3000
 app.use(express.json())
 
 
+
+//swagger
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 //rate limit
 app.use(limiter)
+
+//swagger
+
 
 //helmet
 app.use(helmet())
