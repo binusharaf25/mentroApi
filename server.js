@@ -17,7 +17,7 @@ import { limiter } from './middleweres/rateLimiter.js';
 //swagger
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './utils/swagger.js';
-
+import cors from "cors";
 
 
 
@@ -28,7 +28,9 @@ dotenv.config();
 const app=express()
 const Port=process.env.PORT || 3000
 
-
+app.use(cors({
+  origin: "*"
+}));
 
 app.use(express.json())
 
