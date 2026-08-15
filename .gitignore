@@ -1,0 +1,15 @@
+node_modules
+.env
+dist/
+build/
+logs/
+*.logs
+
+uploads/
+
+//Ide settings
+.vscode/
+.idea/
+.DS_Strors
+
+
