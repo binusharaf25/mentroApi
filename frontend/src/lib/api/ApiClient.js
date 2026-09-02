@@ -7,7 +7,7 @@ import useAuthStore from "../stores/authStore"
 
 
 
-const api_url='http://localhost:3000/api'
+const api_url='srv-da09gdm7bikc73em6v7g/api'
 
 const Api=axios.create({
     baseURL:api_url,
