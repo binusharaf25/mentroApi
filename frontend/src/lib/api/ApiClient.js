@@ -7,7 +7,7 @@ import useAuthStore from "../stores/authStore"
 
 
 
-const api_url='srv-da09gdm7bikc73em6v7g/api'
+const api_url='https://mentroapi.onrender.com/api'
 
 const Api=axios.create({
     baseURL:api_url,
