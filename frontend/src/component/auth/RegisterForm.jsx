@@ -32,6 +32,7 @@ const RegisterForm = () => {
   });
 
   const [error, setError] = useState(null);
+   const navigate = useNavigate();
 
   const handleIputChange = (e) => {
     const { name, value } = e.target;
@@ -69,7 +70,7 @@ const RegisterForm = () => {
     onSuccess: (data) => {
       alert("User creation successed");
       console.log(data);
-      Navigate("/login");
+      navigate("/login");
     },
     onError: (error) => {
       setError(globalError(error));
@@ -81,7 +82,7 @@ const RegisterForm = () => {
     },
   });
 
-  const Navigate = useNavigate();
+ 
   return (
     <div className="w-full">
       <Card className="w-full border-border">

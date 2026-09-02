@@ -10,7 +10,6 @@ authRoutes.post("/login", login);
 
 //procted
 authRoutes.get("/profile",protect,(req, res) => {
-  console.log(" req.user  ",req.user)
   res.json(req.user)
   res.json(`Welecome to protected `);
 });
