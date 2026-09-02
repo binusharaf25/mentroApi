@@ -14,14 +14,14 @@ export const registerUser = async (req, res, next) => {
         if (exists) return res.status(400).json({ message: 'Email already in use' });
 
         const user = await User.create({ name, password, email, role });
-        console.log(name)
+       
 
         const token = generateToken(user._id)
 
         res.status(201).json({ message: "User registered successfully" })
 
     } catch (err) {
-        console.log("error", err)
+       
         next(err)
     }
 }
@@ -43,7 +43,7 @@ export const login = async (req, res, next) => {
         const token = generateToken(user._id);
 
 
-        res.json({ token })
+        res.json({ token,user})
 
     } catch (err) {
         next(err)

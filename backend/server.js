@@ -6,6 +6,8 @@ import authRoutes from '../backend/routes/auth.js'
 import adminDash from '../backend/routes/admin.js';
 import taskRoutes from '../backend/routes/task.js';
 
+import path from 'path'
+import { fileURLToPath } from 'url';
 
 import { loger } from '../backend/middleweres/loger.js';
 import { notFound } from '../backend/middleweres/notFound.js';
@@ -42,7 +44,7 @@ app.use(express.json())
 //swagger
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 //rate limit
-app.use(limiter)
+// app.use(limiter)
 
 //swagger
 
@@ -61,7 +63,16 @@ app.get('/api/first',(req,res)=>{
 app.use('/api/admin',adminDash)
 app.use('/api/tasks',taskRoutes)
 
+//Sever front in production
+if(process.env.NODE_ENV==='production'){
+  const __dirname=path.dirname(fileURLToPath(import.meta.url))
+  app.use(express.static(path.join(__dirname,'../frontend/dist')))
 
+  //server the frontend app
+  app.get(/.*/,(req,res)=>{
+    res.send(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'))
+  })
+}
 
 //Sign up and Login
 app.use('/api/auth',authRoutes)
