@@ -59,18 +59,7 @@ const handleStatusChange=(task,newStatus)=>{
   }
   return (
    <duv className='flex '>
-    <div className='bg-rose-400 h-screen basis-[14%] p-4'>
-           <Tabs defaultValue="all" className="w-full ">
-              <TabsList className='grid grid-cols-1 gap-4 w-full '>
-                
-                <TabsTrigger value="all" className='w-full cursor-pointer'>All</TabsTrigger>
-                <TabsTrigger value="pending" className='w-full cursor-pointer'>Pending </TabsTrigger>
-                <TabsTrigger value="inprogress" className='w-full cursor-pointer'>In progress </TabsTrigger>
-                <TabsTrigger value="completed" className='w-full cursor-pointer'>Completed </TabsTrigger>
-              </TabsList>
-             
-            </Tabs>
-    </div>
+   
      <div className='bg-background min-h-screen w-full mx-auto space-y-4 basis-[83%]'>
 
       {/* Header section  */}
