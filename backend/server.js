@@ -56,6 +56,8 @@ app.use(loger)
 
 
 //registering all router
+//Sign up and Login
+app.use('/api/auth',authRoutes)
 app.use('/api/users',router)
 app.get('/api/first',(req,res)=>{
     res.send("Hello from node back end")
@@ -74,8 +76,7 @@ if(process.env.NODE_ENV==='production'){
   })
 }
 
-//Sign up and Login
-app.use('/api/auth',authRoutes)
+
 //Global middklemare
 app.use(notFound)
 app.use(errorHandler)
